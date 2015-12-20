@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
 
       def kitchen
         foodorders = Order.where(done: nil)
-        @items = MenuItem.where.not(category: "Drinks")
+        @items = MenuItem.where.not(category: "Drinks").order("created_at desc")
         @menuitems = MenuItem.all
 
         @eats = []

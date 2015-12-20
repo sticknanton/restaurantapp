@@ -14,3 +14,16 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+console.log("loaded..");
+
+
+
+
+$( window ).load(function() {
+// jQuery('.row li').slice(1,6).css("background-color", "#ffff00");
+// jQuery('.row li').slice(7,12).css("background-color", "#f57c00");
+
+
+
+});

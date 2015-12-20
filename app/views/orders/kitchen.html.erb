@@ -2,11 +2,23 @@
 
 <ul>
   <% @eats.each do |eat| %>
-  <li><%= eat.menu_item.name %><%= eat.party_id %>
-  <%=form_for eat, url: order_path(eat) do |f| %>
-  <%=f.hidden_field :done, :value => true %>
-  <%=f.submit "✓"%>
-  <% end %>
-  </li>
-  <% end %>
+<div class="row">
+<div class="col s5 push-s3">
+  <% if ((time_ago_in_words(eat.created_at).to_i) < 7) %>
+    <li class="new-class"><%= eat.menu_item.name %> Party #<%= eat.party_id %> | <%= time_ago_in_words(eat.created_at).to_i %> minutes long
+    <% elsif ((time_ago_in_words(eat.created_at).to_i) < 12) %>
+    <li class="med-class"><%= eat.menu_item.name %> Party #<%= eat.party_id %> | <%= time_ago_in_words(eat.created_at).to_i %> minutes long
+    <% else %>
+    <li class="hurry-class"><%= eat.menu_item.name %> Party #<%= eat.party_id %> | <%= time_ago_in_words(eat.created_at).to_i %> minutes long
+    <% end %>
+  </div>
+  <div class="s1">
+    <%=form_for eat, url: order_path(eat) do |f| %>
+    <%=f.hidden_field :done, :value => true %>
+    <%=f.submit "✓"%>
+    <% end %>
+    </li>
+  </div>
+</div>
+<% end %>
 </ul>
