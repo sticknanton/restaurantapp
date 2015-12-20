@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="column s12">
+    <h1>Party Management</h1>
+  </div>
+
+<div class="row">
+  <div class="col s8 push-s2">
+    <div class="collection">
+      <% @parties.each do |party| %>
+      <a href="/parties/<%=party.id%>" class="collection-item">Server : <%= @servers[party.server_id-1].name %> : Party # <%= party.id %> : <%= party.guest_num%> Guests</a>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <%= form_for @party, :html => {:class => "col s12"} do |f| %>
+    <div class="row">
+      <div class="col s2 push-s2">
+        <%= f.number_field :guest_num, :placeholder => "Guests" %>
+      </div>
+      <div class="col s2 push-s2">
+        <%= f.collection_select :server_id, Server.all, :id, :name, { prompt: "Server Name"}, class: "browser-default" %>
+      </div>
+      <div class="col s2 push-s2">
+        <%= f.number_field :table_num, :placeholder => "Table Number"  %>
+      </div>
+      <div class="col s2 push-s2">
+        <%= f.submit "New Party", class: "waves-effect waves-light btn" %>
+      </div>
+      <% end %>
+    </div>
+
+</div>

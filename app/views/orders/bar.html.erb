@@ -1,0 +1,12 @@
+<h2>BAR SCREEN</h2>
+
+<ul>
+  <% @drinks.each do |drink| %>
+  <li><%= drink.menu_item.name %>:<%= drink.party_id %>
+    <%=form_for drink, url: order_path(drink) do |f| %>
+    <%=f.hidden_field :done, :value => true %>
+    <%=f.submit "✓"%>
+    <% end %>
+  </li>
+  <% end %>
+</ul>

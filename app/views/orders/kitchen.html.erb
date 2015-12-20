@@ -1,0 +1,12 @@
+<h1>Kitchen SCREEN!!</h1>
+
+<ul>
+  <% @eats.each do |eat| %>
+  <li><%= eat.menu_item.name %><%= eat.party_id %>
+  <%=form_for eat, url: order_path(eat) do |f| %>
+  <%=f.hidden_field :done, :value => true %>
+  <%=f.submit "✓"%>
+  <% end %>
+  </li>
+  <% end %>
+</ul>

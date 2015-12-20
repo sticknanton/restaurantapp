@@ -1,0 +1,48 @@
+<h1> <%= current_user.username %> </h1>
+<%= button_to "Log-Out", sessions_path, method: :delete %>
+
+
+<%= form_for @menuitem, url: admin_menu_items_path(current_user) do |f| %>
+<%= f.label :category %>
+<%= f.text_field :category %>
+<%= f.label :price %>
+<%= f.text_field :price %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.submit %>
+<% end %>
+​
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Price</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @menuitems.each do |item| %>
+    <tr>
+      <td><%= item.category %></td>
+      <td><%= '%.2f' % item.price %></td>
+      <td><%= item.name %></td>
+      <td><%= button_to "delete", item, :method => :delete %></td>
+
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<%= form_for @server, url: admin_servers_path(current_user) do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.submit %>
+<% end %>
+
+<ul>
+  <%@servers.each do |server| %>
+  <li><%=server.name%><%= button_to "delete", server, :method => :delete %></li>
+  <% end %>
+</ul>

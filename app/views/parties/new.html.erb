@@ -1,0 +1,8 @@
+<%= form_for @party do |f| %>
+  <%= f.label :guest_num, "Guests:" %>
+  <%= f.number_field :guest_num %>
+  <%= f.collection_select :server_id, Server.all, :id, :name, include_blank: true %>
+  <%= f.label :table_num, "Table Number:" %>
+  <%= f.number_field :table_num %>
+  <%= f.submit %>
+<% end %>

@@ -1,9 +1,34 @@
 Rails.application.routes.draw do
+
+  resources :parties do
+    resources :orders
+  end
+
+
+  resources :admins do
+    resources :servers
+    resources :menu_items
+  end
+
+  resources :menu_items
+  resources :servers
+
+  get '/orders/kitchen' => 'orders#kitchen'
+  get '/orders/bar' => 'orders#bar'
+  get '/menu_items' => 'admins#log_in'
+  get '/servers' => 'admins#log_in'
+  get '/log_in' => 'admins#log_in'
+  post '/sessions/' => 'sessions#create'
+
+  delete '/sessions/' => 'sessions#destroy'
+  get '/profile' => 'admins#profile'
+  resources :orders
+  root 'parties#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'welcome#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,0 +1,12 @@
+<ul>
+<% @servers.each do |server| %>
+<li><%= server.id %> : <%= server.name %></li>
+
+</ul>
+<% end %>
+
+<%= form_for @server do |f| %>
+  <%= f.label "Server Name"%>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>
