@@ -1,9 +1,13 @@
 class PartiesController < ApplicationController
 
   def index
-    @parties = Party.all
+    @parties = Party.where(closed: nil)
     @party = Party.new
     @servers = Server.all
+  end
+
+  def checks
+    @parties = Party.where(closed: nil)
   end
 
   def create
@@ -21,12 +25,17 @@ class PartiesController < ApplicationController
     @order = @party.orders.new
 
   end
+  def update
+    party = Party.find(params[:id])
+    party.update (party_params)
+    redirect_to parties_checks_path
+  end
 
   private
 
   def party_params
 
-    params.require(:party).permit(:guest_num, :table_num, :server_id)
+    params.require(:party).permit(:guest_num, :table_num, :server_id, :closed)
 
   end
 

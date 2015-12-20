@@ -13,6 +13,12 @@
  *= require_tree .
  *= require_self
  */
+ * {
+-webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+     -o-box-sizing: border-box;
+        box-sizing: border-box;
+}
  .container{
    text-align: center;
    background-color: #80cbc4;
@@ -27,4 +33,14 @@
  }
  .hurry-class{
    background-color: #e65100;
+ }
+
+ #check{
+   text-align: left;
+   background-color: #eeeeee;
+   border: 1px solid black;
+   min-height: 250px;
+ }
+ .right{
+   text-align: right;
  }

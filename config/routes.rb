@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+get '/parties/checks/' => 'parties#checks'
   resources :parties do
     resources :orders
   end
