@@ -13,7 +13,7 @@ class PartiesController < ApplicationController
   def split
     @menu_items = MenuItem.all
     @current_party = Party.find(params[:id])
-    @spot = 0
+
     new_party = Party.find_by(server_id: nil, closed: nil)
 
     if (new_party && (new_party.id != @current_party.id))

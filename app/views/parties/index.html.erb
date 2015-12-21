@@ -7,7 +7,11 @@
   <div class="col s8 push-s2">
     <div class="collection">
       <% @parties.each do |party| %>
-      <a href="/parties/<%=party.id%>" class="collection-item"> Party # <%= party.id %> : <%= party.guest_num%> Guests</a>
+      <a href="/parties/<%=party.id%>" class="collection-item">Server :
+        <% if party.server_id %>
+        <%= @servers[party.server_id-1].name %>
+        <% end %>
+        : Party # <%= party.id %> : <%= party.guest_num%> Guests</a>
       <% end %>
     </div>
   </div>
