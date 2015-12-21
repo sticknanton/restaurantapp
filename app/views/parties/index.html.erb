@@ -10,6 +10,7 @@
       <a href="/parties/<%=party.id%>" class="collection-item">Server :
         <% if party.server_id %>
         <%= @servers[party.server_id-1].name %>
+      
         <% end %>
         : Party # <%= party.id %> : <%= party.guest_num%> Guests</a>
       <% end %>
