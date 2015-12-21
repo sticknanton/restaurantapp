@@ -17,4 +17,4 @@ To view all currently open checks or close a check a user can view the checks pa
 
 ![Checks](http://i.imgur.com/iAYD1yf.png "Alt text/hover test")
 
-<ul><li><strong>Technologies Used:</strong></li><li>Ruby on Rails</li><li>CSS</li><li>ERDs</li></ul>
+<ul><li><strong>Technologies Used:</strong></li><li>Ruby on Rails</li><li>CSS</li><li>HTML</li></ul>
