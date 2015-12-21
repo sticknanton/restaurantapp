@@ -1,28 +1,9 @@
-== README
+<h1>Restaurante!</h1>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An interactive restaurant management system. A user in the normal parties screen can create parties and set the server name, table number and number of guests for that new party. The home screen (along with the rest of screens) allows a user to navigate between the Parties(home), an admin log in, and views for the checks bar and kitchen.
 
-Things you may want to cover:
+![Party Home Screen](http://imgur.com/7H86Bjl "Home Screen") 
 
-* Ruby version
+In the individual views for a party a user can order food for that party and see the name of each food item ordered along with the price of those items. The bottom of the screen for each party allows the user to see a current subtotal, tax and grand total.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+![A name of picture]( link url "Alt text/hover test") 
