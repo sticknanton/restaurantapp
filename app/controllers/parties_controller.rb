@@ -12,13 +12,15 @@ class PartiesController < ApplicationController
 
   def split
     @current_party = Party.find(params[:id])
+    @new_party = nil
     new_party = Party.find_by(server_id: nil, closed: nil)
-    if new_party && new_party.id != @current_party.id
-    @new_party = new_party
+
+    if (new_party && new_party.id != @current_party.id)
+      @new_party = new_party
     end
 
-    if !@new_party
-    @new_party = Party.create()
+    if @new_party == nil
+      @new_party = Party.create()
     end
     @menu_items = MenuItem.all
   end
