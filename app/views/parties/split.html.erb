@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col s6">
+    <h1>Table # <%= @current_party.id%> </h1>
+    <ul>
+    <%@current_party.orders.each do |order| %>
+    <li><%= @menu_items[order.menu_item_id.to_i-1].name%></li>
+    <li><%=form_for order, url: order_path(order) do |f| %>
+    <%=f.hidden_field :party_id, :value => @new_party.id %>
+    <%=f.submit "✓"%>
+    <% end %>
+    </li>
+    <% end %>
+    </ul>
+  </div>
+  <div class="col s6">
+    <h1>Table # <%= @new_party.id%> </h1>
+    <ul>
+    <% @new_party.orders.each do |order| %>
+    <li><%= @menu_items[order.menu_item_id.to_i-1].name%></li>
+    <% end %>
+    </ul>
+
+
+  </div>
+</div>

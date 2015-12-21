@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 get '/parties/checks/' => 'parties#checks'
+get '/parties/:id/split/' => 'parties#split'
+
   resources :parties do
     resources :orders
   end

@@ -18,7 +18,7 @@
    -moz-box-sizing: border-box;
      -o-box-sizing: border-box;
         box-sizing: border-box;
-}
+  }
  .container{
    text-align: center;
    background-color: #80cbc4;
@@ -43,4 +43,18 @@
  }
  .right{
    text-align: right;
+ }
+
+ .party-show{
+   width: 80%;
+   margin-left: 10%;
+ }
+ tr:nth-child(even) {
+   background-color: #b2dfdb;
+ }
+ select{
+   background-color: #b2dfdb;
+ }
+ select.options.nth-child(even){
+   background-color: #e0f2f1;
  }

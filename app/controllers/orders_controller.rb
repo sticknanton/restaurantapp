@@ -50,18 +50,9 @@ class OrdersController < ApplicationController
       def update
         order = Order.find(params[:id])
         order.update (order_params)
-        bar = false
-        @items = MenuItem.where(category: "Drinks")
-        @items.each do |item|
-          if order.menu_item_id == item.id
-          bar = true
-          end
-        end
-        if bar
-        redirect_to orders_bar_path
-        else
-        redirect_to orders_kitchen_path
-        end
+
+        redirect_to :back
+        
       end
 
       def show
