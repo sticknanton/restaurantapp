@@ -12,13 +12,6 @@
   <% end %>
 </div>
 
-<h4>Party: <%=@party.id %></h3>
-<%= form_for @order, url: party_orders_path(@party) do |f| %>
-<%= f.collection_select :food_id, Food.all, :id, :name%>
-<%= f.submit "Order"%>
-<% end %>
-
-
 
 
 <table class="party-show" class="bordered">
