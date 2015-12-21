@@ -4,9 +4,9 @@
   <% @drinks.each do |drink| %>
 <div class="row">
   <div class="col s5 push-s3">
-    <% if ((time_ago_in_words(drink.created_at).to_i) < 2) %>
+    <% if (((Time.now() - drink.created_at)/60) < 2) %>
       <li class="new-class"><%= drink.menu_item.name %> | Party # <%= drink.party_id %> | <%=time_ago_in_words(drink.created_at) %>
-    <% elsif ((time_ago_in_words(drink.created_at).to_i) < 4) %>
+    <% elsif (((Time.now() - drink.created_at)/60) < 4) %>
       <li class="med-class"><%= drink.menu_item.name %> | Party # <%= drink.party_id %> | <%=time_ago_in_words(drink.created_at) %>
     <% else %>
       <li class="hurry-class"><%= drink.menu_item.name %> | Party # <%= drink.party_id %> | <%=time_ago_in_words(drink.created_at) %>

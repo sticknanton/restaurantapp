@@ -13,7 +13,7 @@ class PartiesController < ApplicationController
   def split
     @current_party = Party.find(params[:id])
     new_party = Party.find_by(server_id: nil, closed: nil)
-    if new_party.id != @current_party.id
+    if new_party && new_party.id != @current_party.id
     @new_party = new_party
     end
 

@@ -4,10 +4,10 @@
   <% @eats.each do |eat| %>
 <div class="row">
 <div class="col s5 push-s3">
-  <% if ((time_ago_in_words(eat.created_at).to_i) < 7) %>
+  <% if (((Time.now() - eat.created_at)/60) < 7) %>
     <li class="new-class"><%= eat.menu_item.name %> Party #<%= eat.party_id %> | <%= time_ago_in_words(eat.created_at) %>
-    <% elsif ((time_ago_in_words(eat.created_at).to_i) < 12) %>
-    <li class="med-class"><%= eat.menu_item.name %> Party #<%= eat.party_id %> | <%= time_ago_in_words(eat.created_at) %> 
+    <% elsif (((Time.now() - eat.created_at)/60) < 12) %>
+    <li class="med-class"><%= eat.menu_item.name %> Party #<%= eat.party_id %> | <%= time_ago_in_words(eat.created_at) %>
     <% else %>
     <li class="hurry-class"><%= eat.menu_item.name %> Party #<%= eat.party_id %> | <%= time_ago_in_words(eat.created_at) %>
     <% end %>

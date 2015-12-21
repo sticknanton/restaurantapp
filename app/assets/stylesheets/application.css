@@ -39,7 +39,7 @@
    text-align: left;
    background-color: #eeeeee;
    border: 1px solid black;
-   min-height: 250px;
+   min-height: 280px;
  }
  .right{
    text-align: right;
@@ -54,4 +54,10 @@
  }
  select{
    background-color: #b2dfdb;
+ }
+ .suggest-grat{
+
+ }
+ .active label{
+   font-size: 20px;
  }

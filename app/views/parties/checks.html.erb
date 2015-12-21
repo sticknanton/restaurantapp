@@ -1,22 +1,28 @@
 <h2>Open Checks</h2>
 
 <div class="row">
-<div class="col s12">
-  <% @parties.each do |party|%>
-  <div class="col s12 m6 l4" id="check">
-    <ul>
-      <%party.menu_items.each do |item|%>
-      <li><%= item.name %> :<div class="right"><%= '%.2f' % item.price %></div></li>
-        <% end%>
-      <li class="right">Total: $<%= '%.2f' % party.total() %></li>
-        <li><%=form_for party, url: party_path(party) do |f| %>
-          <%=f.hidden_field :closed, :value => true %>
-          <%=f.submit "Close Check"%>
-          <% end %>
-        </li>
-        <li><a href="/parties/<%=party.id%>/split">Split Check</a></li>
-    </ul>
+  <div class="col s12">
+    <% @parties.each do |party|%>
+    <div class="col s12 m6 l4" id="check">
+      <ul>
+        <li><strong>Check for Party # <%= party.id %></strong></li>
+        <%party.menu_items.each do |item|%>
+        <li><%= item.name %> :<div class="right"><%= '%.2f' % item.price %></div></li>
+          <% end%>
+          <li><div class="right">Subtotal: $<%= '%.2f' % party.total() %></div></li><br>
+          <li><div class ="right">Tax: $<%= '%.2f' % (party.total()*0.0875) %></div></li><br>
+          <li><div class ="right">Total: $<%= '%.2f' % (party.total()*1.0875) %></div></li>
+          <li><%=form_for party, url: party_path(party) do |f| %>
+            <%=f.hidden_field :closed, :value => true %>
+            <%=f.submit "Close Check"%>
+            <% end %>
+          </li>
+          <li><a href="/parties/<%=party.id%>/split">Split Check</a></li><br>
+          <li><div class ="right">15% gratuity add $<%= '%.2f' % (party.total()*0.15) %></div></li><br>
+          <li><div class ="right">20% gratuity add $<%= '%.2f' % (party.total()*0.20) %></div></li><br>
+          <li><div class ="right">25% gratuity add $<%= '%.2f' % (party.total()*0.25) %></div></li>
+      </ul>
+    </div>
+    <% end %>
   </div>
-  <% end %>
-</div>
 </div>

@@ -12,6 +12,13 @@
   <% end %>
 </div>
 
+<h4>Party: <%=@party.id %></h3>
+<%= form_for @order, url: party_orders_path(@party) do |f| %>
+<%= f.collection_select :food_id, Food.all, :id, :name%>
+<%= f.submit "Order"%>
+<% end %>
+
+
 
 
 <table class="party-show" class="bordered">
@@ -32,4 +39,6 @@
     <% end %>
   </tbody>
 </table>
-<h4>Price so far: $<%= '%.2f' % @party.total() %></h4>
+<h4>Subtotal: $<%= '%.2f' % @party.total() %></h4>
+<h4>Tax: $<%= '%.2f' % (@party.total()*0.0875) %></h4>
+<h4>Total: $<%= '%.2f' % (@party.total() * 1.0875) %></h4>
