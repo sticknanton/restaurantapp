@@ -2,9 +2,9 @@
   <div class="col s6">
     <h1>Table # <%= @current_party.id%> </h1>
     <ul>
-    <%@current_party.orders.each do |order| %>
-    <li><% spot = ((order.menu_item_id.to_i) - 1)%><%=spot%><%= @menu_items[spot].name%></li>
-    <li><%=form_for order, url: order_path(order) do |f| %>
+    <% @current_party.orders.each do |order| %>
+    <li><% @spot = ((order.menu_item_id.to_i)-1)%><%= @spot %><%= @menu_items[@spot].name%></li>
+    <li><%= form_for order, url: order_path(order) do |f| %>
     <%=f.hidden_field :party_id, :value => @new_party.id %>
     <%=f.submit "✓"%>
     <% end %>
@@ -16,11 +16,12 @@
     <h1>Table # <%= @new_party.id%> </h1>
     <ul>
     <% @new_party.orders.each do |order| %>
-    <% spot = ((order.menu_item_id.to_i) - 1)%>
-    <li><%= @menu_items[spot].name%></li>
+    <% @spot = ((order.menu_item_id.to_i)-1)%>
+    <li><%= @menu_items[@spot].name%></li>
     <% end %>
     </ul>
 
 
   </div>
 </div>
+<ul>
