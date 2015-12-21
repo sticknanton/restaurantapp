@@ -55,6 +55,3 @@
  select{
    background-color: #b2dfdb;
  }
- select.options.nth-child(even){
-   background-color: #e0f2f1;
- }
