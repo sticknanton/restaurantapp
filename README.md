@@ -16,3 +16,5 @@ The kitchen/bar view allows a user to see currently active orders, the time sinc
 To view all currently open checks or close a check a user can view the checks page. The checks page displays all currently opened checks their items, and totals with suggested gratuities. There is also an option to split a check. 
 
 ![Checks](http://i.imgur.com/iAYD1yf.png "Alt text/hover test")
+
+<ul><li><strong>Technologies Used:</strong></li><li>Ruby on Rails</li><li>CSS</li><li>ERDs</li></ul>
