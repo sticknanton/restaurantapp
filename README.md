@@ -14,3 +14,5 @@ The kitchen/bar view allows a user to see currently active orders, the time sinc
 ![Bar/kitchen](http://i.imgur.com/dYlGqmY.png "Alt text/hover test") 
 
 To view all currently open checks or close a check a user can view the checks page. The checks page displays all currently opened checks their items, and totals with suggested gratuities. There is also an option to split a check. 
+
+![Checks](http://i.imgur.com/iAYD1yf.png "Alt text/hover test")
