@@ -9,4 +9,5 @@ class Party < ActiveRecord::Base
     end
   total
   end
+  
 end

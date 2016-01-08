@@ -10,7 +10,7 @@ RSpec.describe Party, type: :model do
       Order.create({party: @party, menu_item: @food1})
       Order.create({party: @party, menu_item: @food2})
     end
-    describe '#favorite_candy' do
+    describe '#check_total' do
       it 'returns Total cost' do
         actual = @party.total()
         expectation = 11.00

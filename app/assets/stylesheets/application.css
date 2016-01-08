@@ -55,9 +55,9 @@
  select{
    background-color: #b2dfdb;
  }
- .suggest-grat{
-
- }
+.check-ticket{
+  margin: 15%;
+}
  .active label{
    font-size: 20px;
  }

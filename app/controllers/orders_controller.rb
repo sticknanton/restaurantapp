@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
 
       def bar
         drinkorders = Order.where(done: nil)
-        @items = MenuItem.where(category: "Drinks")
+        @items = MenuItem.where(category: "Drinks").order("created_at desc")
         @menuitems = MenuItem.all
 
         @drinks = []
@@ -52,7 +52,7 @@ class OrdersController < ApplicationController
         order.update (order_params)
 
         redirect_to :back
-        
+
       end
 
       def show
